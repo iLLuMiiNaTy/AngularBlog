@@ -69,7 +69,7 @@
                     <label class="block text-gray-500 font-bold md:text-5xl mb-1 md:mb-0 pr-4">Blogs</label><br>
                       <div class="flex flex-wrap -mx-4">
                           @for (blog of blogs; track blog){
-                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8 dark:text-gray-200">
+                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8 dark:text-gray-200" *ngIf="blog.visibility === 'Public' || !blog.visibility">
                               <button class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
                                   <img [src]="getFullImageUrl(blog.poster_path, blog.newUrl)" alt="Image" class="mb-4 rounded-md" srcset="">
                                   <h2 class="text-3xl font-bold underline mb-2"> {{ blog.title }} </h2>
